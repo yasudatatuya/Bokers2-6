@@ -42,10 +42,10 @@
         <% else %>
         <div id="follow_form">
             <% if current_user.following?(user) %>
-                <%= render 'unfollow' %>
-            <% else %>
-                <%= render 'follow' %>
-            <% end %>
+                    <%= render 'users/unfollow' %>
+                <% else %>
+                    <%= render 'users/follow' %>
+                <% end %>
         </div>
         <% end %>
     </div>

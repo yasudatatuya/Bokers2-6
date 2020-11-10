@@ -33,21 +33,10 @@
                                 </th>
                                 <th><%= link_to book_path(book) do %><%= book.title %><% end %></th>
                                 <th><%= book.body %></th>
-                                <% if book.favorited_by?(current_user) %>
-                                    <th>
-                                        <%= link_to book_favorites_path(book.id), method: :delete do %>
-                                            <span class="glyphicon glyphicon-heart" aria-hidden="true" style="color: red;"></span>
-                                            <%= book.favorites.count %> いいね
-                                        <% end %>
-                                    </th>
-                                <% else %>
-                                    <th>
-                                        <%= link_to book_favorites_path(book), method: :post do %>
-                                            <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
-                                            <%= book.favorites.count %> いいね
-                                        <% end %>
-                                    </th>
-                                <% end %>
+                                <th id ="book_<%= book.id %>">
+                                    <%= render 'favorites/favorite-btn', book: book %>
+                                </th>
+                                
                                 <th>コメント数:<%= book.book_comment_ids.count %></th>
                             <% end %>
                             </tbody>
