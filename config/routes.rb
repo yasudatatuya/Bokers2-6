@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   #get 'search' => 'searches#search'
   get 'search/search'
   root to:'home#top'
+  aadsvhiohiocgugjkfgohuigui
   resources :users, only: [:show, :index, :edit, :update] do
     member do
       get :following, :followers
